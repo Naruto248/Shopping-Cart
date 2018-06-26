@@ -1,5 +1,9 @@
 package com.shoppingcart.beans;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component("Product")
 public class Product {
 
 	private int id;
@@ -10,6 +14,7 @@ public class Product {
 		return vendor;
 	}
 
+	@Autowired
 	public void setVendor(Vendor vendor) {
 		this.vendor = vendor;
 	}
