@@ -8,7 +8,25 @@ public class Product {
 
 	private int id;
 	private String name;
+	private String price;
+	private String desc;
 	private Vendor vendor;
+
+	public String getPrice() {
+		return price;
+	}
+
+	public void setPrice(String price) {
+		this.price = price;
+	}
+
+	public String getDesc() {
+		return desc;
+	}
+
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
 
 	public Vendor getVendor() {
 		return vendor;
@@ -40,7 +58,5 @@ public class Product {
 		return "Product [id=" + id + ", name=" + name + ", vendor=" + vendor
 				+ "]";
 	}
-	
-	
 
 }
