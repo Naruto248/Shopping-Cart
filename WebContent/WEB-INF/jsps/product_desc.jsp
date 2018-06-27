@@ -8,9 +8,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>This is index</h1>
-Hello <c:out value="${name }"></c:out>
-<br>
-<a href="<%= request.getContextPath()%>/Show-All-Products">Show All Products</a>
+
+<c:forEach var="p" items="${list }">
+	<c:if test="${id == p.getId() }">
+		<h1><c:out value="${p.getName() }" /></h1>
+		Rs. <c:out value="${p.getPrice() }" /><br>
+		<c:out value="${p.getDesc() }" />
+	</c:if>
+</c:forEach>
 </body>
 </html>

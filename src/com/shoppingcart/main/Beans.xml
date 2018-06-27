@@ -33,6 +33,6 @@
 		base-package="com.shoppingcart.beans, com.shoppingcart.model">
 	</context:component-scan>
 	<context:annotation-config></context:annotation-config>
-	<context:property-placeholder location="com/shoppingcart/main/jdbc.properties" />
+	<context:property-placeholder location="classpath:com/shoppingcart/main/jdbc.properties" />
 	
 </beans>

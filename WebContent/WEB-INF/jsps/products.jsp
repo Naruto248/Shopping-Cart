@@ -8,9 +8,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>This is index</h1>
-Hello <c:out value="${name }"></c:out>
-<br>
-<a href="<%= request.getContextPath()%>/Show-All-Products">Show All Products</a>
+
+<h1>All Products</h1>
+<c:forEach var="p" items="${list }">
+	<c:out value="${p.getName() }" /> -- <c:out value="${p.getPrice() }" /> <br>
+	<a href="<%= request.getContextPath() %>/Show-Product?id=<c:out value="${p.getId() }" />">Description</a> <br>
+</c:forEach>
 </body>
 </html>

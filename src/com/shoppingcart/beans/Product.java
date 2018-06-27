@@ -1,7 +1,11 @@
 package com.shoppingcart.beans;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import com.shoppingcart.model.Account;
 
 @Component("Product")
 public class Product {
@@ -11,6 +15,13 @@ public class Product {
 	private String price;
 	private String desc;
 	private Vendor vendor;
+	private Account account;
+	
+	
+	@Autowired
+	public void setAccount(Account account) {
+		this.account = account;
+	}
 
 	public String getPrice() {
 		return price;
@@ -59,4 +70,11 @@ public class Product {
 				+ "]";
 	}
 
+	public List<Product> getAllProducts(){
+		return account.getAllProducts();
+	}
+	
+	public Product getOneProduct(int id){
+		return account.getOneProduct(id);
+	}
 }
