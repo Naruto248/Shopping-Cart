@@ -1,0 +1,23 @@
+[33mcommit 1ff240363eeab1e41f49274c0e0a7c649a59729d[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Abhijeet Pandhe <abhijeetpandhe@gmail.com>
+Date:   Wed Jun 27 01:45:49 2018 +0530
+
+    Database working properly
+
+[33mcommit a6f600a9bb4c37cf790a428e4074a794c7d94d63[m
+Author: Abhijeet Pandhe <abhijeetpandhe@gmail.com>
+Date:   Wed Jun 27 00:11:25 2018 +0530
+
+    Configuring JDBC
+
+[33mcommit d94afc767d75b626ef433c90664d5a78eabee1ed[m
+Author: Abhijeet Pandhe <abhijeetpandhe@gmail.com>
+Date:   Tue Jun 26 12:08:53 2018 +0530
+
+    No change
+
+[33mcommit 7259e571c5852718f44e287c2de19556375d4e3a[m
+Author: Abhijeet Pandhe <abhijeetpandhe@gmail.com>
+Date:   Tue Jun 26 12:00:24 2018 +0530
+
+    Add Product and Vendor beans

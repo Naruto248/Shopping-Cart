@@ -8,6 +8,7 @@
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
 		<config>src/com/shoppingcart/main/Beans.xml</config>
+		<config>WebContent/WEB-INF/cart-servlet.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

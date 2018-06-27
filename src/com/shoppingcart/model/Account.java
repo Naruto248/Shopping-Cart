@@ -24,7 +24,6 @@ public class Account {
 	}
 
 	public List<Product> getAllProducts() {
-
 		return jdbc.query("SELECT * FROM product", new RowMapper<Product>() {
 
 			@Override
