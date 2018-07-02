@@ -8,10 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>This is index</h1>
-Hello <c:out value="${name }"></c:out>
-<br>
-<a href="<%= request.getContextPath()%>/Show-All-Products">Show All Products</a>
-<a href="${pageContext.request.contextPath }/Vendor-Registration">Vendor registration</a>
+<h1>Registration Success</h1>
+<h3>Set your credentials</h3>
+Name <c:out value="${name }" /><br>
+City <c:out value="${city }" />
 </body>
 </html>

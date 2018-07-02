@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,10 +8,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>This is index</h1>
-Hello <c:out value="${name }"></c:out>
-<br>
-<a href="<%= request.getContextPath()%>/Show-All-Products">Show All Products</a>
-<a href="${pageContext.request.contextPath }/Vendor-Registration">Vendor registration</a>
+<h1>Vendor Registration</h1>
+<form action="${pageContext.request.contextPath }/vendor-register" method="POST">
+Name : <input type="text" name="name"><br>
+City : <input type="text" name="city"><br>
+<input type="submit" value="Register"><br>
+</form>
 </body>
 </html>
