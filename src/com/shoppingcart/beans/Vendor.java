@@ -1,7 +1,12 @@
 package com.shoppingcart.beans;
 
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
 public class Vendor {
+	@Pattern(regexp="\\w+")
 	private String name;
+	@Size(min=4, max=10)
 	private String city;
 
 	public String getName() {

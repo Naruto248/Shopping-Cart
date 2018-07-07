@@ -3,10 +3,12 @@ package com.shoppingcart.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -43,13 +45,16 @@ public class CartController {
 		return mav;
 	}
 	
-	@RequestMapping(value="/Vendor-Registration")
+	@RequestMapping("/Vendor-Registration")
 	public String reqRegister(){
 		return "vendor_register";
 	}
 	
 	@RequestMapping(value="/vendor-register", method=RequestMethod.POST)
-	public String doRegister(Model model, Vendor v){
+	public String doRegister(Model model, @Valid Vendor v, BindingResult result){
+		if(result.hasErrors()){
+			return "vendor_register";
+		}
 		model.addAttribute("name", v.getName());
 		model.addAttribute("city", v.getCity());
 		return "set_password";
