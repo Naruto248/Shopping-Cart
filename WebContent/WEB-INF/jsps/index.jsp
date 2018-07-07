@@ -12,6 +12,7 @@
 Hello <c:out value="${name }"></c:out>
 <br>
 <a href="<%= request.getContextPath()%>/Show-All-Products">Show All Products</a>
-<a href="${pageContext.request.contextPath }/Vendor-Registration">Vendor registration</a>
+<a href="${pageContext.request.contextPath }/vendor-register">Vendor registration</a><br><br>
+<a href="${pageContext.request.contextPath }/Add-Product">Add Product</a>
 </body>
 </html>

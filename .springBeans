@@ -9,6 +9,7 @@
 	<configs>
 		<config>src/com/shoppingcart/main/Beans.xml</config>
 		<config>WebContent/WEB-INF/cart-servlet.xml</config>
+		<config>src/com/shoppingcart/main/security-context.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

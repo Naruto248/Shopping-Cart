@@ -11,16 +11,23 @@
     <servlet-name>cart</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
-  <!-- needed for ContextLoaderListener -->
-	<context-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:com/shoppingcart/main/Beans.xml</param-value>
-	</context-param>
-
-	<!-- Bootstraps the root web application context before servlet initialization -->
-	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
-
-
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>
+    	classpath:com/shoppingcart/main/Beans.xml
+    	classpath:com/shoppingcart/main/security-context.xml
+    </param-value>
+  </context-param>
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <filter>
+    <display-name>springSecurityFilterChain</display-name>
+    <filter-name>springSecurityFilterChain</filter-name>
+    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>springSecurityFilterChain</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
 </web-app>

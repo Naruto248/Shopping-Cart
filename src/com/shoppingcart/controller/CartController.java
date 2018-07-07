@@ -40,6 +40,11 @@ public class CartController {
 		return "products";
 	}
 	
+	@RequestMapping("/Add-Product")
+	public String showAllProducts(){
+		return "add_product";
+	}
+	
 	@RequestMapping("/Show-Product")
 	public ModelAndView showProduct(@ModelAttribute("id") String id){
 		mav.addObject("id", id);
@@ -47,7 +52,7 @@ public class CartController {
 		return mav;
 	}
 	
-	@RequestMapping("/Vendor-Registration")
+	@RequestMapping(value="/vendor-register", method=RequestMethod.GET)
 	public String reqRegister(Model model){
 		model.addAttribute("vendor", new Vendor());
 		return "vendor_register";
@@ -55,7 +60,7 @@ public class CartController {
 	
 	@RequestMapping(value="/vendor-register", method=RequestMethod.POST)
 	public String doRegister(Model model, @Valid Vendor v, BindingResult result){
-		if(result.hasErrors()){
+		if(result.hasErrors()){ 
 			return "vendor_register";
 		}
 		model.addAttribute("name", v.getName());
