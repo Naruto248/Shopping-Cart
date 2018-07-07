@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sv" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,10 +10,10 @@
 </head>
 <body>
 <h1>Vendor Registration</h1>
-<form action="${pageContext.request.contextPath }/vendor-register" method="POST">
-Name : <input type="text" name="name"><br>
-City : <input type="text" name="city"><br>
-<input type="submit" value="Register"><br>
-</form>
+<sv:form action="${pageContext.request.contextPath }/vendor-register" method="POST" modelAttribute="vendor">
+Name : <sv:input type="text" name="name" path="name" /> <sv:errors path="name"/><br>
+City : <sv:input type="text" name="city" path="city" /> <sv:errors path="city"/><br>
+<input type="submit" value="Register" /><br>
+</sv:form>
 </body>
 </html>

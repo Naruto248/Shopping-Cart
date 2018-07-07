@@ -9,10 +9,12 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Component;
 
 import com.shoppingcart.beans.Product;
+import com.shoppingcart.beans.Vendor;
 
 @Component("Account")
 public class Account {
@@ -56,5 +58,10 @@ public class Account {
 			}
 
 		});
+	}
+	
+	public void createVendor(Vendor v) {
+		BeanPropertySqlParameterSource param = new BeanPropertySqlParameterSource(v);
+		jdbc.update("INSERT INTO vendor(name, city) VALUES(:name, :city)", param);
 	}
 }

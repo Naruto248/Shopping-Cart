@@ -24,6 +24,8 @@ public class CartController {
 	private Product product;
 	@Autowired
 	private ModelAndView mav;
+	@Autowired
+	private Vendor vendor;
 	
 	@RequestMapping("/")
 	public String showIndex(Model model){
@@ -46,7 +48,8 @@ public class CartController {
 	}
 	
 	@RequestMapping("/Vendor-Registration")
-	public String reqRegister(){
+	public String reqRegister(Model model){
+		model.addAttribute("vendor", new Vendor());
 		return "vendor_register";
 	}
 	
@@ -57,6 +60,8 @@ public class CartController {
 		}
 		model.addAttribute("name", v.getName());
 		model.addAttribute("city", v.getCity());
+		//DB insert
+		vendor.createVendor(v);
 		return "set_password";
 	}
 }
