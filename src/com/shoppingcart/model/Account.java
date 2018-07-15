@@ -62,6 +62,8 @@ public class Account {
 	
 	public void createVendor(Vendor v) {
 		BeanPropertySqlParameterSource param = new BeanPropertySqlParameterSource(v);
-		jdbc.update("INSERT INTO vendor(name, city) VALUES(:name, :city)", param);
+		jdbc.update("INSERT INTO vendor(name, city, email) VALUES(:name, :city, :email)", param);
+		jdbc.update("INSERT INTO users(username, password, enabled) VALUES(:email, :password, :enabled)", param);
+		jdbc.update("INSERT INTO authorities(username, authority) VALUES(:email, :authority)", param);
 	}
 }

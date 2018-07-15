@@ -63,10 +63,10 @@ public class CartController {
 		if(result.hasErrors()){ 
 			return "vendor_register";
 		}
-		model.addAttribute("name", v.getName());
-		model.addAttribute("city", v.getCity());
 		//DB insert
+		v.setEnabled("true");
+		v.setAuthority("vendor");
 		vendor.createVendor(v);
-		return "set_password";
+		return "register_success";
 	}
 }

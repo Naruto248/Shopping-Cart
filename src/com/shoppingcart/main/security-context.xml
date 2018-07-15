@@ -13,6 +13,9 @@
 					password="password" />
 			</security:user-service>
 		</security:authentication-provider>
+		<security:authentication-provider>
+			<security:jdbc-user-service data-source-ref="dataSource" />
+		</security:authentication-provider>
 	</security:authentication-manager>
 	<security:http>
 		<security:csrf disabled="true" />
@@ -24,6 +27,9 @@
 		<security:intercept-url pattern="/Show-All-Products" access="permitAll" />
 		<security:intercept-url pattern="/Add-Product" access="isAuthenticated()" />
 		<security:intercept-url pattern="/login" access="permitAll" />
+		<security:intercept-url pattern="/logout" access="permitAll" />
 		<security:intercept-url pattern="/**" access="denyAll" />
+		<security:logout logout-success-url="/" />
 	</security:http>
+
 </beans>

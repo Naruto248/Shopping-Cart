@@ -9,8 +9,6 @@
 </head>
 <body>
 <h1>Registration Success</h1>
-<h3>Set your credentials</h3>
-Name <c:out value="${name }" /><br>
-City <c:out value="${city }" />
+<a href="${pageContext.request.contextPath }/">Go Home</a>
 </body>
 </html>
