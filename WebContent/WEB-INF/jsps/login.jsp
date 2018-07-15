@@ -9,12 +9,16 @@
 </head>
 <body>
 <h3>Custom Login</h3><form name='f' action='${pageContext.request.contextPath }/login' method='POST'>
-<c:if test="${param.status != null }">
+<c:if test="${param.status != incorrect }">
 	<font color="red">Invalid Username or Password</font>
+</c:if>
+<c:if test="${param.action != logout }">
+	<font color="blue">You have been successfully logged out</font>
 </c:if>
 <table>
 	<tr><td>User:</td><td><input type='text' name='username' value=''></td></tr>
 	<tr><td>Password:</td><td><input type='password' name='password'/></td></tr>
+	<tr><td>Remember Me:</td><td><input type='checkbox' name='_spring_security_remember_me' checked="checked"/></td></tr>
 	<tr><td colspan='2'><input name="submit" type="submit" value="Login"/></td></tr>
 </table>
 </form>

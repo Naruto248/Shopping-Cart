@@ -29,7 +29,7 @@
 
 	<bean id="account" class="com.shoppingcart.model.Account"></bean>
 	
-	<bean id="mav" class="org.springframework.web.servlet.ModelAndView"></bean>
+	
 	
 	<context:component-scan
 		base-package="com.shoppingcart.beans, com.shoppingcart.model">

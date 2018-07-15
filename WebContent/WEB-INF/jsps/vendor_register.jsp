@@ -11,11 +11,11 @@
 <body>
 <h1>Vendor Registration</h1>
 <sv:form action="${pageContext.request.contextPath }/vendor-register" method="POST" modelAttribute="vendor">
-Name : <sv:input type="text" name="name" path="name" /> <sv:errors path="name"/><br>
-City : <sv:input type="text" name="city" path="city" /> <sv:errors path="city"/><br>
-Email : <sv:input type="text" name="email" path="email" /> <sv:errors path="email"/><br>
-Password : <sv:input type="password" name="password" path="password" /> <sv:errors path="password"/><br>
-Password : <input type="password" name="repassword" path="repassword" /><br>
+Name : <sv:input type="text" name="name" path="name" /> <sv:errors path="name"/><br><br>
+City : <sv:input type="text" name="city" path="city" /> <sv:errors path="city"/><br><br>
+Email : <sv:input type="text" name="email" path="email" /> <sv:errors path="email"/><br><br>
+Password : <sv:input type="password" name="password" path="password" /> <sv:errors path="password"/><br><br>
+Retype Password : <input type="password" name="repassword" path="repassword" /><br><br>
 <input type="submit" value="Register" /><br>
 </sv:form>
 </body>

@@ -23,8 +23,6 @@ public class CartController {
 	@Autowired
 	private Product product;
 	@Autowired
-	private ModelAndView mav;
-	@Autowired
 	private Vendor vendor;
 	
 	@RequestMapping("/")
@@ -46,7 +44,7 @@ public class CartController {
 	}
 	
 	@RequestMapping("/Show-Product")
-	public ModelAndView showProduct(@ModelAttribute("id") String id){
+	public ModelAndView showProduct(ModelAndView mav, @ModelAttribute("id") String id){
 		mav.addObject("id", id);
 		mav.setViewName("product_desc");
 		return mav;
